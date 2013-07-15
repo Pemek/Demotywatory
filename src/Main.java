@@ -14,6 +14,9 @@ public class Main{
 	 */
 	public static void main(String[] args) throws AddressException, MessagingException {
 		
+		MyWindow mw = new MyWindow("w");
+		mw.setVisible(true);
+		
 		MyWindow myWindow = new MyWindow();
 		myWindow.setVisible(true);
 		

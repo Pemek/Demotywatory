@@ -1,4 +1,5 @@
 import java.awt.Dimension;
+import java.awt.LayoutManager;
 import java.util.Date;
 
 import javax.swing.GroupLayout;
@@ -7,6 +8,10 @@ import javax.swing.GroupLayout.ParallelGroup;
 import javax.swing.GroupLayout.SequentialGroup;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JLayer;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.LayoutStyle;
@@ -78,8 +83,48 @@ public class MyWindow extends JFrame{
         //Create the vertical group
         layout.setVerticalGroup(vGroup);
         setMinimumSize(new Dimension(500, 500));
+        
+        
+        
+        
         pack();
 
+	}
+	
+	public MyWindow(String s)
+	{
+		//inicjalizacja okna
+		jFrame1 = new JFrame("Konkurs Demotywatory");
+		jFrame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jFrame1.setSize(300, 300);
+		
+		//dodanie menu
+		buildMenu(jFrame1);
+
+		//dodanie loga
+		buildLog(jFrame1);
+		
+		jFrame1.setVisible(true);
+	}
+	
+	private void buildMenu(JFrame jFrame1)
+	{
+		JMenuBar jMenuBar1 = new JMenuBar();
+		JMenu jMenu1 = new JMenu("menu");
+		
+		JMenuItem jMenuItem1 = new JMenuItem("opcje");
+		
+		jMenu1.add(jMenuItem1);
+		jMenuBar1.add(jMenu1);
+		jFrame1.setJMenuBar(jMenuBar1);
+		
+	}
+	
+	private void buildLog(JFrame jFrame1)
+	{
+		GroupLayout gl = new GroupLayout(jFrame1);
+		textArea = new JTextArea("adasdsadasd");
+		gl.addLayoutComponent("asd", textArea);
 	}
 	
 	public void addToLog(String log)
