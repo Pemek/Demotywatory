@@ -18,7 +18,7 @@ public class SendMail {
 	    props.put("mail.smtp.port", "587");
 	    props.put("mail.smtp.auth", "true");
 //
-	    String[] to = {"madej.magda.mm@gamil.com" , "DemotCompetition@gmail.com", "przemyslaw.madej@yahoo.pl"}; // added this line
+	    String[] to = {"madej.magda.mm@gamil.com" , "DemotCompetition@gmail.com", "przemyslaw.madej@yahoo.pl", "kudlaty.true@gmail.com"}; // added this line
 //
 	    Session session = Session.getDefaultInstance(props, null);
 	    MimeMessage message = new MimeMessage(session);
