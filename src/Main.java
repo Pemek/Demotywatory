@@ -14,9 +14,6 @@ public class Main{
 	 */
 	public static void main(String[] args) throws AddressException, MessagingException {
 		
-		MyWindow mw = new MyWindow("w");
-		mw.setVisible(true);
-		
 		MyWindow myWindow = new MyWindow();
 		myWindow.setVisible(true);
 		
@@ -36,20 +33,22 @@ public class Main{
 			{
 				myWindow.addToLog("pojawil sie nowy konkurs!");
 				
-				Thread t = new Thread(new Runnable() {
-					
-					@Override
-					public void run() {
-						// TODO Auto-generated method stub
-						try {
-							new SendMail().sendMail();
-						} catch (MessagingException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
-				});
+				SendMail t = new SendMail(List2);
 				t.run();
+//				Thread t = new Thread(new Runnable() {
+//					
+//					@Override
+//					public void run() {
+//						// TODO Auto-generated method stub
+//						try {
+//							new SendMail().sendMail();
+//						} catch (MessagingException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//					}
+//				});
+//				t.run();
 //				new SendMail().sendMail(List2);
 				List1 = new ArrayList<>(List2);
 			}

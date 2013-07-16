@@ -91,41 +91,6 @@ public class MyWindow extends JFrame{
 
 	}
 	
-	public MyWindow(String s)
-	{
-		//inicjalizacja okna
-		jFrame1 = new JFrame("Konkurs Demotywatory");
-		jFrame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		jFrame1.setSize(300, 300);
-		
-		//dodanie menu
-		buildMenu(jFrame1);
-
-		//dodanie loga
-		buildLog(jFrame1);
-		
-		jFrame1.setVisible(true);
-	}
-	
-	private void buildMenu(JFrame jFrame1)
-	{
-		JMenuBar jMenuBar1 = new JMenuBar();
-		JMenu jMenu1 = new JMenu("menu");
-		
-		JMenuItem jMenuItem1 = new JMenuItem("opcje");
-		
-		jMenu1.add(jMenuItem1);
-		jMenuBar1.add(jMenu1);
-		jFrame1.setJMenuBar(jMenuBar1);
-		
-	}
-	
-	private void buildLog(JFrame jFrame1)
-	{
-		GroupLayout gl = new GroupLayout(jFrame1);
-		textArea = new JTextArea("adasdsadasd");
-		gl.addLayoutComponent("asd", textArea);
-	}
 	
 	public void addToLog(String log)
 	{

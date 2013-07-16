@@ -15,10 +15,10 @@ public class DownloadPage {
 		String web = "";
 		
 		try{
-			url = new URL("http://demotywatory.pl/wygraj");
-//			url = new URL("file:d:\\Demotywatory.pl.htm");
+//			url = new URL("http://demotywatory.pl/wygraj");
+			url = new URL("file:C:\\Users\\dev\\Downloads\\Demotywatory.pl.htm");
 			is = url.openStream();
-			br = new BufferedReader(new InputStreamReader(is));
+			br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
 			
 			while((line = br.readLine() ) != null)
 			{

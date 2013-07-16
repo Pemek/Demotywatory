@@ -1,9 +1,24 @@
 import java.util.*;
+
 import javax.mail.*;
 import javax.mail.internet.*;
 import javax.activation.*;
 
-public class SendMail {
+public class SendMail implements Runnable{
+	private ArrayList<Competition> competitionList;
+	private String[] toMails = {
+//			"madej.magda.mm@gamil.com" , 
+			"DemotCompetition@gmail.com", 
+//			"przemyslaw.madej@yahoo.pl", 
+			"przemyslaw.madej0@gmail.com"
+//			"kudlaty.true@gmail.com"
+			}; // added this line;
+	
+	public SendMail(ArrayList<Competition> cl)
+	{
+		this.competitionList = new ArrayList<Competition>(cl);
+	}
+	
 	public void sendMail() throws AddressException, MessagingException
 	{
 		///////////////////////////////////////////////////////////
@@ -18,7 +33,7 @@ public class SendMail {
 	    props.put("mail.smtp.port", "587");
 	    props.put("mail.smtp.auth", "true");
 //
-	    String[] to = {"madej.magda.mm@gamil.com" , "DemotCompetition@gmail.com", "przemyslaw.madej@yahoo.pl", "kudlaty.true@gmail.com"}; // added this line
+	    String[] to = toMails;
 //
 	    Session session = Session.getDefaultInstance(props, null);
 	    MimeMessage message = new MimeMessage(session);
@@ -56,8 +71,10 @@ public class SendMail {
 	    props.put("mail.smtp.password", pass);
 	    props.put("mail.smtp.port", "587");
 	    props.put("mail.smtp.auth", "true");
-//
-	    String[] to = {"przemyslaw.madej0@gmail.com" , "DemotCompetition@gmail.com", "przemyslaw.madej@yahoo.pl"}; // added this line
+	    //polskie znaki zgodne z norma iso
+	    props.put("mail.mime.charset", "ISO-8859-2");
+	    
+	    String[] to = toMails;
 //
 	    Session session = Session.getDefaultInstance(props, null);
 	    MimeMessage message = new MimeMessage(session);
@@ -75,12 +92,22 @@ public class SendMail {
 	        message.addRecipient(Message.RecipientType.TO, toAddress[i]);
 	    }
 	    message.setSubject("Demotywatory Konkurs!");
-	    message.setText("Wlasnie ukazal sie nowy konkurs na demotywatorach\n"
+	    message.setText("Wlasnie ukazal sie nowy konkurs na demotywatorach\n" +
+	    		"lista ostatnich 10 konkursow\n\n\n"
 	    		+ OperationOnCompetitionList.CompetitionListToString(competitionList)
 	    		);
 	    Transport transport = session.getTransport("smtp");
 	    transport.connect(host, from, pass);
 	    transport.sendMessage(message, message.getAllRecipients());
 	    transport.close();
+	}
+
+	@Override
+	public void run() {
+		try {
+			sendMail(competitionList);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 }

@@ -20,8 +20,8 @@ public class OperationOnCompetitionList {
 		String result = "";
 		for(int i=0; i<List.size(); i++)
 		{
-			result += List.get(i).getTitle();
-			result += "\n";
+			result += List.get(i).getTitle() + "\n" + 
+					List.get(i).getLink() + "\n\n";
 		}
 		return result;
 	}
