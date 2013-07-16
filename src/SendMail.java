@@ -7,11 +7,11 @@ import javax.activation.*;
 public class SendMail implements Runnable{
 	private ArrayList<Competition> competitionList;
 	private String[] toMails = {
-//			"madej.magda.mm@gamil.com" , 
+			"madej.magda.mm@gamil.com" , 
 			"DemotCompetition@gmail.com", 
-//			"przemyslaw.madej@yahoo.pl", 
-			"przemyslaw.madej0@gmail.com"
-//			"kudlaty.true@gmail.com"
+			"przemyslaw.madej@yahoo.pl", 
+//			"przemyslaw.madej0@gmail.com"
+			"kudlaty.true@gmail.com"
 			}; // added this line;
 	
 	public SendMail(ArrayList<Competition> cl)
