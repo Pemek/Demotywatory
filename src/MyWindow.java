@@ -1,5 +1,4 @@
 import java.awt.Dimension;
-import java.awt.LayoutManager;
 import java.util.Date;
 
 import javax.swing.GroupLayout;
@@ -8,10 +7,6 @@ import javax.swing.GroupLayout.ParallelGroup;
 import javax.swing.GroupLayout.SequentialGroup;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JLayer;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.LayoutStyle;
@@ -105,11 +100,5 @@ public class MyWindow extends JFrame{
 			textArea.setText(textArea.getText() + new Date().toString()+ " " + log + "\n");
 		}
 		
-	}
-	
-	private void deleteLine()
-	{
-		textArea.replaceRange(null, 0, textArea.getText().indexOf("\n")+1);
-		rowsCount--;
 	}
 }

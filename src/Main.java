@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
-import javax.swing.JFrame;
 
 
 public class Main{

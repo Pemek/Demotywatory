@@ -1,7 +1,3 @@
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.nio.charset.Charset;
-import java.nio.charset.spi.CharsetProvider;
 
 
 public class Competition {
@@ -26,9 +22,6 @@ public class Competition {
 		return title;
 	}
 
-	private void setTitle(String title) {
-		this.title = title;
-	}
 
 	public String getLink() {
 		return link;
