@@ -7,6 +7,25 @@ import java.net.URL;
 public class DownloadPage {
 	public static String downloadPage()
 	{
+		//sciagniecie strony
+		String web ="";
+		
+		web = download();
+		//jezeli sie udalo to idzie dalej a jezeli nie to czeka i ponawia probe
+		while(web == ""){
+			try {
+				Thread.sleep(1000*30);
+				web = download();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		
+		return web;
+	}
+	
+	private static String download()
+	{
 		URL url;
 		
 		InputStream is = null;

@@ -51,7 +51,6 @@ public class Main{
 //				new SendMail().sendMail(List2);
 				List1 = new ArrayList<>(List2);
 			}
-//			brak komunikatu gdy nie ma konkursu
 			else
 				myWindow.addToLog("brak nowego konkursu!");
 			
