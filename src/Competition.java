@@ -14,7 +14,7 @@ public class Competition {
 		this.title = s.substring(index1, index2);
 		index1 = s.indexOf("href=")+6;
 		index2 = s.indexOf("\">", index1);
-		this.link = s.substring(index1, index2);
+		this.link = "http://demotywatory.pl/" + s.substring(index1, index2);
 //		System.out.println(s.substring(index1, index2));
 	}
 
