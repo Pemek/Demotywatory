@@ -28,6 +28,7 @@ public class DownloadPage {
 		}
 		catch (Exception e) {
 			// TODO: handle exception
+			System.out.println("wyjatek przy pobieraniu strony");
 		}
 		
 		return web;
