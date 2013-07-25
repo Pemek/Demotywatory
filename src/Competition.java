@@ -7,15 +7,22 @@ public class Competition {
 	
 	
 	public Competition(String s) {
-		// TODO Auto-generated constructor stub
-		int index1 = s.indexOf("<h2>") + 4;
-		int index2 = s.indexOf("</h2>");
-
-		this.title = s.substring(index1, index2);
-		index1 = s.indexOf("href=")+6;
-		index2 = s.indexOf("\">", index1);
-		this.link = "http://demotywatory.pl/" + s.substring(index1, index2);
-//		System.out.println(s.substring(index1, index2));
+		try{
+			// TODO Auto-generated constructor stub
+			int index1 = s.indexOf("<h2>") + 4;
+			int index2 = s.indexOf("</h2>");
+	
+			this.title = s.substring(index1, index2);
+			index1 = s.indexOf("href=")+6;
+			index2 = s.indexOf("\">", index1);
+			this.link = "http://demotywatory.pl/" + s.substring(index1, index2);
+	//		System.out.println(s.substring(index1, index2));
+		}
+		catch(Exception e){
+			System.out.println("Competition "+e);
+			System.err.println("Competition "+e);
+		}
+		
 	}
 
 	public String getTitle() {

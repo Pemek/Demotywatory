@@ -18,6 +18,8 @@ public class DownloadPage {
 				web = download();
 			} catch (Exception e) {
 				// TODO: handle exception
+				System.out.println("DownloadPage.downloadPage "+e);
+				System.err.println("DownloadPage.downloadPage "+e);
 			}
 		}
 		
@@ -47,7 +49,8 @@ public class DownloadPage {
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("wyjatek przy pobieraniu strony");
+			System.err.println("DownloadPage.download "+e);
+			System.out.println("DownloadPage.download "+e);
 		}
 		
 		return web;
